@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click on the "Choose File" button to upload a file:</p>
+
+<form action="/action_page.php">
+  <audio id="audio">
+    <source src="" id="thesource" />
+  </audio>
+  <input type="file" id="upload" title="Upload File" />
+  <input type="submit">
+</form>
+
+<script>
+  function handleFiles(event) {
+    var files = event.target.files;
+    $("#src").attr("src", URL.createObjectURL(files[0]));
+    document.getElementById("audio").load();
+}
+
+document.getElementById("upload").addEventListener("change", handleFiles, false);
+</script>
+
+</body>
+</html>
